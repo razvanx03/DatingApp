@@ -23,4 +23,6 @@ export class MessageService {
   {
     return this.http.get<Message[]>(this.baseUrl + 'messages/thread/' + username)
   }
+  
+  // aici
 }

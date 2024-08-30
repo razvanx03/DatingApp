@@ -40,6 +40,7 @@ export class TestErrorsComponent implements OnInit {
   }
 
   get401Error() {
+
     this.http.get(this.baseUrl + 'buggy/auth').subscribe(response => {
       console.log(response);
     }, error => {
