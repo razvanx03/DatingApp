@@ -45,26 +45,27 @@ export class PresenceService {
     })
 
     this.hubConnection.on('NewMessageReceived', ({username, knownAs}) => {
-      this.toastr.info(knownAs + 'has sent you a new message!').onTap.pipe(take(1)).subscribe(() => this.router.navigateByUrl('/members/' + username + '?tab=3'));
+      this.toastr.info(knownAs + ' has sent you a new message!').onTap.pipe(take(1))
+        .subscribe(() => this.router.navigateByUrl('/members/' + username + '?tab=3'));
     })
 
-        // Handle connection closed events
-        this.hubConnection.onclose(error => {
-          console.error('Connection closed with error:', error);
-          // Optionally implement reconnection logic or notify the user
-        });
-    
-        // Handle reconnecting events
-        this.hubConnection.onreconnecting(error => {
-          console.warn('Connection is reconnecting due to error:', error);
-          // Optionally notify the user or provide visual feedback
-        });
-    
-        // Handle reconnection successful events
-        this.hubConnection.onreconnected(connectionId => {
-          console.log('Connection reestablished with id:', connectionId);
-          // Optionally notify the user or update state
-        });
+    // // Handle connection closed events
+    // this.hubConnection.onclose(error => {
+    //   console.error('Connection closed with error:', error);
+    //   // Optionally implement reconnection logic or notify the user
+    // });
+
+    // // Handle reconnecting events
+    // this.hubConnection.onreconnecting(error => {
+    //   console.warn('Connection is reconnecting due to error:', error);
+    //   // Optionally notify the user or provide visual feedback
+    // });
+
+    // // Handle reconnection successful events
+    // this.hubConnection.onreconnected(connectionId => {
+    //   console.log('Connection reestablished with id:', connectionId);
+    //   // Optionally notify the user or update state
+    // });
   }
 
   stopHubConnection() {
