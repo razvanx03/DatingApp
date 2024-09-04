@@ -29,7 +29,7 @@ namespace API.SingalR
             var otherUser = httpContext.Request.Query["user"].ToString();
             var groupName = GetGroupName(Context.User.GetUsername(), otherUser);
             await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
-            await AddToGroup(Context, groupName);
+            await AddToGroup(groupName);
 
             var messages = await _messageRepository.GetMessageThread(Context.User.GetUsername(), otherUser);
 
@@ -81,7 +81,7 @@ namespace API.SingalR
             }
         }
 
-        private async Task<bool> AddToGroup(HubCallerContext context, string groupName)
+        private async Task<bool> AddToGroup(string groupName)
         {
             var group = await _messageRepository.GetMessageGroup(groupName);
             var connection = new Connection(Context.ConnectionId, Context.User.GetUsername());
