@@ -32,6 +32,7 @@ namespace API
             services.AddControllers();
             services.AddCors();
             services.AddIdentityServices(_config);
+            services.AddScoped<UnitOfWork>();
             services.AddSignalR();
         }
 
