@@ -2,7 +2,7 @@
 
 A modern dating application built with ASP.NET Core backend and Angular frontend, featuring real-time messaging, user matching, and profile management.
 
-## 🚀 Features
+## Features
 
 - **User Authentication & Authorization**
 - **Profile Management**
@@ -13,7 +13,7 @@ A modern dating application built with ASP.NET Core backend and Angular frontend
 - **Member Search & Filtering**
 - **Responsive Design**
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 - ASP.NET Core
@@ -30,7 +30,7 @@ A modern dating application built with ASP.NET Core backend and Angular frontend
 - Font Awesome
 - ngx-bootstrap
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 DatingApp/
@@ -51,8 +51,6 @@ DatingApp/
     │   ├── assets/       # Static assets
     │   └── environments/ # Environment configurations
 ```
-
-## 🚀 Getting Started
 
 ### Prerequisites
 - .NET 6.0 SDK
@@ -81,7 +79,7 @@ DatingApp/
    ng serve
    ```
 
-## 🔒 Environment Variables
+## Environment Variables
 
 Create the following files with appropriate values:
 
